@@ -1,0 +1,31 @@
+# Environment with the API key
+.env
+
+# Virtual environment
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# IDE
+.idea/
+.vscode/
+
+# macOS
+.DS_Store
+
+# Local data (test videos) and the results of the jobs
+data/
+output/
+
+# Local Claude Code instructions
+CLAUDE.md
+
+# Credentials of any kind
+*service-account*.json
+*.pem
+*.key

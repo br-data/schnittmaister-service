@@ -1,0 +1,61 @@
+{
+    "version": 1,
+    "disable_existing_loggers": false,
+    "formatters": {
+        "simple": {
+            "format": "%(asctime)s %(name)-12s %(levelname)-6s - %(message)s",
+            "datefmt": "%H:%M:%S"
+        }
+    },
+    "filters": {
+        "warnings_and_below": {
+            "()": "src.config.logging_config.filter_maker",
+            "level": "WARNING"
+        }
+    },
+    "handlers": {
+        "stdout": {
+            "class": "logging.StreamHandler",
+            "level": "DEBUG",
+            "formatter": "simple",
+            "stream": "ext://sys.stdout",
+            "filters": [
+                "warnings_and_below"
+            ]
+        },
+        "stderr": {
+            "class": "logging.StreamHandler",
+            "level": "ERROR",
+            "formatter": "simple",
+            "stream": "ext://sys.stderr"
+        }
+    },
+    "loggers": {
+        "root": {
+            "level": "DEBUG",
+            "handlers": [
+                "stderr",
+                "stdout"
+            ]
+        },
+        "uvicorn": {
+            "level": "INFO"
+        },
+        "uvicorn.error": {
+            "level": "INFO"
+        },
+        "uvicorn.access": {
+            "handlers": [
+                "stdout"
+            ],
+            "level": "INFO",
+            "propagate": false
+        },
+        "httpx": {
+            "level": "WARNING"
+        },
+        "google_genai": {
+            "level": "WARNING"
+        }
+    }
+}

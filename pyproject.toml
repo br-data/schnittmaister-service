@@ -1,0 +1,28 @@
+[project]
+name = "schnittmaister-service"
+version = "0.1.0"
+description = "Turns a video into a cut proposal with Gemini and returns it as an XMEML file for Premiere Pro"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.161.1",
+    "google-genai>=2.33.0",
+    "httpx>=0.28.1",
+    "pydantic>=2.14.1",
+    "pydantic-settings>=2.6",
+    "tenacity>=9.1.4",
+    "uvicorn>=0.54.0",
+]
+
+[dependency-groups]
+dev = [
+    "httpx2>=2.16.0",
+    "pyright>=1.1.414",
+    "pytest>=9.1.1",
+    "ruff>=0.17.2",
+]
+
+[tool.pyright]
+include = ["src", "tests", "api.py"]
+pythonVersion = "3.12"
