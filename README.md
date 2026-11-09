@@ -119,6 +119,8 @@ The older Flash models are fallbacks for when the default answers with 503 "high
 
 **Data use.** In the free tier, Google may use your prompts, videos and responses to improve its products, including review by humans. Check the [Gemini API terms](https://ai.google.dev/gemini-api/terms) before sending confidential material.
 
+**Security.** This is a minimal demo for local use. The service has no authentication and accepts any file path. Anyone who can reach it can have it analyse any video your user account can read, read the results and use your Gemini API key. Do not expose it to a network. To run it as a shared service, add authentication, restrict video paths to one media folder, and check the Host and Origin headers of incoming requests.
+
 ## Contact
 
 - <martin.burghart@br.de>
